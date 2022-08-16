@@ -28,7 +28,7 @@ jobs:
       - working-directory: ./cdk 
         run: |
           npm ci
-          npm run lint -- --fix
+          npm run lint --fix
           npm test
           npm run synth
       - name: test and check formatting
@@ -38,8 +38,7 @@ jobs:
         run: |
           sbt -v assembly
 
-      - uses: guar
-      
+      - uses: guardian/actions-riff-raff@v1
         with:
           app: backend-103-LAKSHMIRPILLAI
           config: | 
