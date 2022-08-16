@@ -28,7 +28,7 @@ jobs:
       - working-directory: ./cdk 
         run: |
           npm ci
-          npm run lint --fix
+          npm run lint
           npm test
           npm run synth
       - name: test and check formatting
@@ -47,7 +47,7 @@ jobs:
             regions:
               - eu-west-1
             allowedStages:
-            - CODE
+              - CODE
             deployments:
               cloudformation:
                 type: cloud-formation
