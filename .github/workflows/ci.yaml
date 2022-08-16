@@ -28,7 +28,7 @@ jobs:
       - working-directory: ./cdk 
         run: |
           npm ci
-          npm run lint --fix
+          npm run lint -- --fix
           npm test
           npm run synth
       - name: test and check formatting
