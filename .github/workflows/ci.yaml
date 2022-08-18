@@ -55,7 +55,7 @@ jobs:
                 sources:
                   - cdk/cdk.out/Backend103Lakshmirpillai-CODE.template.json
                 parameters:
-                  amiParameter: AMIBackend103lakshmirpillai
+                  amiParameter: AMIBackend103Lakshmirpillai
                   amiTags:
                     BuiltBy: amigo
                     Recipe: backend-101
