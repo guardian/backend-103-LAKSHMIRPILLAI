@@ -54,18 +54,18 @@ jobs:
                 app: backend-103-LAKSHMIRPILLAI
                 sources:
                   - cdk/cdk.out/Backend103Lakshmirpillai-CODE.template.json
-              parameters:
-                amiParameter: AMIBackend103lakshmirpillai
-                amiTags:
-                  Recipe: backend-101
-                  AmigoStage: PROD
-                templatePath: Backend103Lakshmirpillai-CODE.template.json 
-            backend-103-LAKSHMIRPILLAI: 
-              type: autoscaling
-              sources:
-                - target/scala-2.13/hello-world.jar
-                - app.service 
-              parameters:
-                bucket: deploy-tools-dist 
-              dependencies:
-                - cloudformation
+                parameters:
+                  amiParameter: AMIBackend103lakshmirpillai
+                  amiTags:
+                    Recipe: backend-101
+                    AmigoStage: PROD
+                  templatePath: Backend103Lakshmirpillai-CODE.template.json 
+              backend-103-LAKSHMIRPILLAI: 
+                type: autoscaling
+                sources:
+                  - target/scala-2.13/hello-world.jar
+                  - app.service 
+                parameters:
+                  bucket: deploy-tools-dist 
+                dependencies:
+                  - cloudformation
