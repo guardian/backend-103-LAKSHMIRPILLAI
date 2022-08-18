@@ -29,7 +29,7 @@ jobs:
         run: |
           npm ci
           npm run lint
-          npm test
+          npm run test
           npm run synth
       - name: test and check formatting
         run: |
@@ -47,25 +47,26 @@ jobs:
             regions:
               - eu-west-1
             allowedStages:
-            - CODE
+              - CODE
             deployments:
               cloudformation:
                 type: cloud-formation
                 app: backend-103-LAKSHMIRPILLAI
-              sources:
-                - cdk/cdk.out/Backend103Lakshmirpillai-CODE.template.json 
-              parameters:
-                amiParameter: AMIBackend103lakshmirpillai
-                amiTags:
-                  Recipe: backend-101
-                  AmigoStage: PROD
-                templatePath: Backend103Lakshmirpillai-CODE.template.json 
-            backend-103-LAKSHMIRPILLAI: 
-              type: autoscaling
-              sources:
-                - target/scala-2.13/hello-world.jar
-                - app.service 
-              parameters:
-                bucket: deploy-tools-dist 
-              dependencies:
-                - cloudformation
+                sources:
+                  - cdk/cdk.out/Backend103Lakshmirpillai-CODE.template.json
+                parameters:
+                  amiParameter: AMIBackend103LAKSHMIRPILLAI
+                  amiTags:
+                    BuiltBy: amigo
+                    Recipe: backend-101
+                    AmigoStage: PROD
+                  templatePath: Backend103Lakshmirpillai-CODE.template.json 
+              backend-103-LAKSHMIRPILLAI: 
+                type: autoscaling
+                sources:
+                  - target/scala-2.13/hello-world.jar
+                  - app.service 
+                parameters:
+                  bucket: deploy-tools-dist 
+                dependencies:
+                  - cloudformation
