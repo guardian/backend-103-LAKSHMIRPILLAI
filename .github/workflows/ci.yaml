@@ -53,7 +53,7 @@ jobs:
                 type: cloud-formation
                 app: backend-103-LAKSHMIRPILLAI
               sources:
-                - cdk/cdk.out/Backend103Lakshmirpillai-CODE.template.json 
+                - cdk/cdk.out/Backend103Lakshmirpillai-CODE.template.json
               parameters:
                 amiParameter: AMIBackend103lakshmirpillai
                 amiTags:
