@@ -57,6 +57,7 @@ jobs:
                 parameters:
                   amiParameter: AMIBackend103lakshmirpillai
                   amiTags:
+                    BuiltBy: amigo
                     Recipe: backend-101
                     AmigoStage: PROD
                   templatePath: Backend103Lakshmirpillai-CODE.template.json 
